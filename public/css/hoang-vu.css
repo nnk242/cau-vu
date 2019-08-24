@@ -83,12 +83,44 @@ p.small {
     overflow-x: auto;
 }
 
+.scroll-product-hot_::-webkit-scrollbar {
+    display: none;
+}
+
 .scroll-product-hot_, .scroll-product-hot_ > .items-product-hot_ {
     display: flex;
 }
 
-#nav {
-    position: absolute;
+.control-scroll-product_ {
     top: 50%;
-    width: 300px;
+    width: 100%;
+}
+
+.control-scroll-product_, .control-scroll-product_ > .next-scroll-product_, .control-scroll-product_ > .prev-scroll-product_ {
+    position: absolute;
+}
+
+.control-scroll-product_ > .next-scroll-product_, .control-scroll-product_ > .prev-scroll-product_ {
+    width: 40px;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: 1s;
+}
+
+.control-scroll-product_ > .next-scroll-product_:hover, .control-scroll-product_ > .prev-scroll-product_:hover {
+    opacity: 1;
+    transition: 1s;
+}
+
+.control-scroll-product_ > .next-scroll-product_ {
+    right: 0;
+}
+
+.control-scroll-product_ > .prev-scroll-product_ {
+    left: 0;
+}
+
+.control-scroll-product_ > .next-scroll-product_ > img, .control-scroll-product_ > .prev-scroll-product_ > img {
+    border-radius: 50%;
+    border: solid 2px #f5f5fa;
 }

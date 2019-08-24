@@ -1,13 +1,11 @@
-$('#prev').on('click', function() {
+$('.prev-scroll-product_').on('click', function() {
     $('.scroll-product-hot_').animate({
         scrollLeft: '-=100'
     }, 300, 'swing')
-    console.log('prev')
 });
 
-$('#next').on('click', function() {
+$('.next-scroll-product_').on('click', function() {
     $('.scroll-product-hot_').animate({
         scrollLeft: '+=100'
     }, 300, 'swing')
-    console.log('next')
 });
