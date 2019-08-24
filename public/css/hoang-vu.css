@@ -1,0 +1,94 @@
+.text-logo_ {
+    font-size: 24px;
+    font-weight: bold;
+    transition: 1.5s;
+}
+
+.text-logo_:hover {
+    color: #ec0e00;
+    transition: 0.5s;
+}
+
+.featured-product_ {
+    min-width: 160px;
+}
+
+.contact_ {
+    min-width: 55px;
+}
+
+.news_ {
+    min-width: 50px;
+}
+
+.text-copyright-outline_ {
+    font-size: 5vw;
+    position: absolute;
+    color: #ec0e00;
+    opacity: 0.1;
+}
+
+.img-product_ {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.bg > img {
+    width: 100%;
+}
+
+p.small {
+    height: 60px;
+}
+
+.price_, .product-sale_ {
+    margin-bottom: 10px;
+}
+
+.hot-product_ {
+    width: 250px;
+}
+
+.product-hot_ {
+    margin-bottom: 5rem;
+    position: relative;
+}
+
+.title-product-hot_ {
+    margin-bottom: 2rem;
+    width: 100%;
+    color: #ff2d20;
+}
+
+.content-product_ {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 2em;
+    background: #fff;
+    box-shadow: 0 20px 30px -16px rgba(9, 9, 16, .2);
+}
+
+.name-product_ {
+    margin-bottom: 0;
+}
+
+.product-sale_ {
+    text-decoration: line-through;
+    font-size: 13px;
+}
+
+.scroll-product-hot_ {
+    overflow-x: auto;
+}
+
+.scroll-product-hot_, .scroll-product-hot_ > .items-product-hot_ {
+    display: flex;
+}
+
+#nav {
+    position: absolute;
+    top: 50%;
+    width: 300px;
+}
