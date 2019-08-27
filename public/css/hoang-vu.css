@@ -68,6 +68,7 @@ p.small {
     padding: 2em;
     background: #fff;
     box-shadow: 0 20px 30px -16px rgba(9, 9, 16, .2);
+    position: relative;
 }
 
 .name-product_ {
@@ -123,4 +124,116 @@ p.small {
 .control-scroll-product_ > .next-scroll-product_ > img, .control-scroll-product_ > .prev-scroll-product_ > img {
     border-radius: 50%;
     border: solid 2px #f5f5fa;
+}
+
+.discount-badge_ {
+    background-image: url("/img/icons/voucher.png");
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 45px;
+    top: 0;
+    vertical-align: middle;
+    line-height: 44px;
+    color: #ffffff;
+    font-weight: bold;
+    padding-left: 8px;
+}
+
+.position-relative_ {
+    position: relative;
+}
+
+/*hai*/
+.content-header-top_ {
+    display: flex;
+    margin-top: 3em;
+}
+
+.left-menu-header-top_ {
+    width: 30%;
+}
+
+.slider-holder_ {
+    width: 70%;
+}
+
+.slider-holder_ > .image-holder_ {
+    height: 100%;
+    background: #fafafa;
+}
+
+.right-menu-header-top_ {
+    position: relative;
+}
+
+.slider-holder_ > .slider-button-holder_ {
+    width: 100%;
+    position: absolute;
+}
+
+.slider-holder_ > .slider-button-holder_ .slider-image-dot_ {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: solid 2px #cccccc;
+    float: left;
+    margin-left: 3px;
+    bottom: 0;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.slider-holder_ > .slider-button-holder_ .slider-image-dot_:hover {
+    background: #cccccc;
+    transition: 1s;
+}
+
+.slider-holder_ > .image-holder_ .slider-image_ {
+    position: absolute;
+    object-fit: cover;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    transition: 1s;
+    min-height: 350px;
+}
+
+.slider-holder_ > .image-holder_ .slider-image_:not(:first-child) {
+    display: none;
+}
+
+.active-slide_ {
+    background: #cccccc;
+}
+
+.mobile-category_ {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .mobile-category_ {
+        display: block;
+    }
+
+    .left-menu-header-top_ {
+        display: none;
+    }
+
+    .right-menu-header-top_ {
+        width: 100%;
+    }
+
+    .content-header-top_ {
+        margin-top: 13em;
+        margin-bottom: 13em;
+    }
+
+    .slider-holder_ > .slider-button-holder_ {
+        bottom: -190px;
+    }
 }

@@ -2229,7 +2229,8 @@ header.main .search_box.search--on .input_group input[type=search] {
 
 header.main .header_content {
     display: flex;
-    align-items: center
+    align-items: center;
+    position: relative;
 }
 
 header.main .header_content .trigger_contain {
@@ -2336,7 +2337,7 @@ header.main .header_content .trigger_contain .nav_trigger {
 
 nav.main {
     position: absolute;
-    z-index: -2;
+    z-index: 9;
     top: 100%;
     left: 0;
     width: 100%;
@@ -2376,7 +2377,7 @@ nav.main .nav_contain > ul > li:last-child {
 }
 
 nav.main .nav_contain > ul li {
-    display: block;
+    /*display: block;*/
     padding: .75em 0;
     text-align: center
 }
@@ -3217,7 +3218,7 @@ footer .footer_bg {
 }
 
 .partners_block {
-    margin: 6.5em 0
+    margin: 5.5em 0
 }
 
 .partners_block ul.partners_list {
@@ -3244,7 +3245,7 @@ footer .footer_bg {
 
 @media (min-width: 76em) {
     .partners_block {
-        margin: 12em 0
+        margin: 5.5em 0
     }
 
     .partners_block ul.partners_list {

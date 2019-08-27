@@ -36,7 +36,15 @@
 
 <header class="main">
     @include('components.layouts.frontend.contain')
-    @include('components.layouts.frontend.content-product')
+    <div class="home standard_layout">
+        <div class="remodal-bg">
+            <div class="content_contain" style="padding-bottom: 4.5em;">
+                <div class="page_contain">
+                    @include('components.layouts.frontend.content-product')
+                </div>
+            </div>
+        </div>
+    </div>
     @include('components.layouts.frontend.footer')
 </header>
 

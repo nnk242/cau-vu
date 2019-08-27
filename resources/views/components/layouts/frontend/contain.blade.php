@@ -8,7 +8,7 @@
         <nav class="main">
             <div class="nav_contain">
                 <ul>
-                    <li>
+                    <li class="mobile-category_">
                         <a href="#" class="drop_trigger featured-product_">Danh mục<span class="arrow"><img
                                     src="/img/icons/nav_arrow.min.svg" alt="Expand"></span></a>
                         <div class="drop_contain">
