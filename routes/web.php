@@ -14,6 +14,10 @@
 Route::get('/', function () {
     return view('pages.frontend.index');
 });
+Route::get('/detail', function () {
+    return view('pages.frontend.detail');
+});
+
 
 Auth::routes();
 

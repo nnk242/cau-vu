@@ -215,6 +215,16 @@ p.small {
     display: none;
 }
 
+.img-breadcrumb_ {
+    width: 6px;
+    margin: 0 3px;
+}
+
+.content-breadcrumb_ {
+    background: #fbffff;
+    padding: 3px 0.8em;
+}
+
 @media only screen and (max-width: 768px) {
     .mobile-category_ {
         display: block;
