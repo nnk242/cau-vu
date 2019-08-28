@@ -126,6 +126,12 @@ p.small {
     border: solid 2px #f5f5fa;
 }
 
+.title-name-product_ {
+    font-weight: bold;
+    font-size: 23px;
+    width: 100%;
+}
+
 .discount-badge_ {
     background-image: url("/img/icons/voucher.png");
     width: 100%;
@@ -222,7 +228,94 @@ p.small {
 
 .content-breadcrumb_ {
     background: #fbffff;
-    padding: 3px 0.8em;
+    padding: 3px 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.content-breadcrumb_ > span {
+    color: #ff2d20;
+}
+
+.detail-item-all-images {
+    display: flex;
+    max-height: 450px;
+    width: 50%;
+    padding: 1rem;
+}
+
+.detail-item-left-image_ {
+    width: 30%;
+    padding: 0 1rem;
+}
+
+.detail-item-left-image_ > .active-item-image_ {
+    outline: solid 1px #ff2d20;
+}
+
+.detail-item-left-image_ img {
+    cursor: pointer;
+}
+
+.detail-item-right-image_ {
+    width: 70%;
+}
+
+.detail-item-right-image_ > img {
+    height: 100%;
+    object-fit: contain;
+    margin: auto;
+}
+
+.table-detail_ {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-detail_ > tbody > tr > td:first-child {
+    background: #efefef;
+}
+
+.table-detail_ > tbody > tr > td {
+    border: solid 1px #cccccc;
+    padding: 10px;
+}
+
+.table-detail_ colgroup .first_ {
+    width: 30%;
+}
+
+.table-detail_ colgroup .last_ {
+    width: 70%;
+}
+
+.zoom {
+    display: inline-block;
+    position: relative;
+}
+
+.zoom:after {
+    display: block;
+    width: auto;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.zoom img {
+    display: block;
+}
+
+.zoom img::selection {
+    background-color: transparent;
+}
+
+#ex2 img:hover {
+    cursor: grab;
+}
+
+#ex2 img:active {
+    cursor: grabbing;
 }
 
 @media only screen and (max-width: 768px) {

@@ -25,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="/css/app.css">
     <link rel="stylesheet" type="text/css" href="{{asset('/css/hoang-vu.css')}}">
 
+    @yield('css')
     <!-- Load JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script type="text/javascript"
@@ -50,6 +51,6 @@
 </script>
 
 <script src="{{asset('/js/js.js')}}"></script>
-<script src="{{asset('/js/hoang-vu.js')}}"></script>
+@yield('js')
 </body>
 </html>
