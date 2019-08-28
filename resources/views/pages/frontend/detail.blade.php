@@ -13,8 +13,8 @@
                              src="{{asset('img/icons/chevron-right.svg')}}"><span>Tên sản phẩm</span>
                     </div>
                     <div class="contain">
-                        <div style="display: flex">
-                            <div class="detail-item-all-images">
+                        <div class="detail-item_">
+                            <div class="detail-item-all-images_">
                                 <div class="detail-item-left-image_">
                                     <img class="item-image_ active-item-image_" role="active"
                                          src="https://66.media.tumblr.com/a2b105d5eaaa7f739709cb53ec61f2d8/tumblr_poyjg1Fdva1rogvb0o1_1280.jpg">
@@ -26,7 +26,7 @@
                                         src="https://66.media.tumblr.com/a2b105d5eaaa7f739709cb53ec61f2d8/tumblr_poyjg1Fdva1rogvb0o1_1280.jpg">
                                 </div>
                             </div>
-                            <div style="width: 50%; padding: 1rem">
+                            <div class="detail-price_">
                                 <span class="title-name-product_">Tên sản phẩm</span>
                                 <p style="margin-bottom: 0">Người chế tác: Hoàng vũ</p>
                                 <p style="margin: 0">Mã sản phẩm: HV1</p>
