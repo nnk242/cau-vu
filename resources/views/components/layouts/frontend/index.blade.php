@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/ins2wgm.css">
 
     <!-- Load styles -->
-    <link rel="stylesheet" type="text/css" href="/css/app.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/app.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('/css/hoang-vu.css')}}">
 
     @yield('css')

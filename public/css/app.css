@@ -2171,7 +2171,8 @@ header.main .logo {
 }
 
 header.main .logo .mark {
-    margin-right: 1.25em
+    margin-right: 1.25em;
+    width: 40px;
 }
 
 header.main .logo .type {

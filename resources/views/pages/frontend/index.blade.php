@@ -101,7 +101,7 @@
                                                 </div>
                                                 <h5 class="name-product_">Tên sản phẩm</h5>
                                                 <p class="price_">Giá: <b>150.000 vnđ</b></p>
-                                                <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                                <a href="/" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                             </div>
                                         </div>
                                         <div class="hot-product_">
@@ -114,7 +114,7 @@
                                                 <h5 class="name-product_">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản
                                                     phẩm</h5>
                                                 <p class="price_">Giá: <b>150.000 vnđ</b></p>
-                                                <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                                <a href="/" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                             </div>
                                         </div>
                                         <div class="hot-product_">
@@ -127,7 +127,7 @@
                                                 <h5 class="name-product_">Tên sản phẩm</h5>
                                                 <p class="price_">Giá: <b>150.000 vnđ</b></p>
                                                 <p class="product-sale_">Giá gốc: <b>150.000 vnđ</b></p>
-                                                <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                                <a href="/" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                             </div>
                                         </div>
                                         <div class="hot-product_">
@@ -139,7 +139,7 @@
                                                 </div>
                                                 <h5 class="name-product_">Tên sản phẩm</h5>
                                                 <p class="price_">Giá: <b>150.000 vnđ</b></p>
-                                                <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                                <a href="/" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                             </div>
                                         </div>
                                         <div class="hot-product_">
@@ -151,7 +151,7 @@
                                                 </div>
                                                 <h5 class="name-product_">Tên sản phẩm</h5>
                                                 <p class="price_">Giá: <b>150.000 vnđ</b></p>
-                                                <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                                <a href="/" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -179,7 +179,7 @@
                                             <p class="small">Sản phẩm làm bằng gỗ =))</p>
                                             <p class="price_">Giá: <b>150.000 ₫</b> <span
                                                     class="product-sale_">10.690.000 ₫</span></p>
-                                            <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                            <a href="/" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                         </div>
                                     </li>
                                     <li>
@@ -194,7 +194,7 @@
                                             <p class="small">Sản phẩm làm bằng gỗ =)).</p>
                                             <p class="price_">Giá: <b>150.000 ₫</b> <span
                                                     class="product-sale_">10.690.000 ₫</span></p>
-                                            <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                            <a href="/" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                         </div>
                                     </li>
                                     <li>
@@ -208,7 +208,7 @@
                                             <p class="small">Sản phẩm làm bằng gỗ =)).</p>
                                             <p class="price_">Giá: <b>150.000 ₫</b> <span
                                                     class="product-sale_">10.690.000 ₫</span></p>
-                                            <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                            <a href="/" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                         </div>
                                     </li>
                                     <li>
@@ -222,7 +222,7 @@
                                             <p class="small">Sản phẩm làm bằng gỗ =)).</p>
                                             <p class="price_">Giá: <b>150.000 ₫</b> <span
                                                     class="product-sale_">10.690.000 ₫</span></p>
-                                            <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                            <a href="/" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                         </div>
                                     </li>
                                 @endfor
@@ -243,7 +243,7 @@
                                                 </div>
                                                 <h5 class="name-product_">Tên sản phẩm</h5>
                                                 <p class="price_">Giá: <b>150.000 vnđ</b></p>
-                                                <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                                <a href="/" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                             </div>
                                         </div>
                                         <div class="hot-product_">
@@ -256,7 +256,7 @@
                                                 <h5 class="name-product_">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản
                                                     phẩm</h5>
                                                 <p class="price_">Giá: <b>150.000 vnđ</b></p>
-                                                <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                                <a href="/" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                             </div>
                                         </div>
                                         <div class="hot-product_">
@@ -269,7 +269,7 @@
                                                 <h5 class="name-product_">Tên sản phẩm</h5>
                                                 <p class="price_">Giá: <b>150.000 vnđ</b></p>
                                                 <p class="product-sale_">Giá gốc: <b>150.000 vnđ</b></p>
-                                                <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                                <a href="/" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                             </div>
                                         </div>
                                         <div class="hot-product_">
@@ -281,7 +281,7 @@
                                                 </div>
                                                 <h5 class="name-product_">Tên sản phẩm</h5>
                                                 <p class="price_">Giá: <b>150.000 vnđ</b></p>
-                                                <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                                <a href="/" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                             </div>
                                         </div>
                                         <div class="hot-product_">
@@ -293,7 +293,7 @@
                                                 </div>
                                                 <h5 class="name-product_">Tên sản phẩm</h5>
                                                 <p class="price_">Giá: <b>150.000 vnđ</b></p>
-                                                <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                                <a href="/" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                             </div>
                                         </div>
                                     </div>
