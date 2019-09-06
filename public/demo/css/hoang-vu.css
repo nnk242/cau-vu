@@ -63,6 +63,7 @@ p.small {
 
 .content-product_ {
     display: flex;
+    display: -webkit-flex;
     flex-direction: column;
     height: 100%;
     padding: 2em;
@@ -90,6 +91,7 @@ p.small {
 
 .scroll-product-hot_, .scroll-product-hot_ > .items-product-hot_ {
     display: flex;
+    display: -webkit-flex;
 }
 
 .control-scroll-product_ {
@@ -133,7 +135,7 @@ p.small {
 }
 
 .discount-badge_ {
-    background-image: url("/img/icons/voucher.png");
+    background-image: url("/demo/img/icons/voucher.png");
     width: 100%;
     background-size: contain;
     background-repeat: no-repeat;
@@ -154,7 +156,9 @@ p.small {
 /*hai*/
 .content-header-top_ {
     display: flex;
+    display: -webkit-flex;
     margin-top: 3em;
+    margin-bottom: 3em;
 }
 
 .left-menu-header-top_ {
@@ -238,6 +242,7 @@ p.small {
 
 .detail-item-all-images_ {
     display: flex;
+    display: -webkit-flex;
     max-height: 375px;
     width: 50%;
     padding: 1rem;
@@ -320,10 +325,12 @@ p.small {
 
 .detail-item_ {
     display: flex;
+    display: -webkit-flex;
 }
 
 .detail-item_ > .detail-price_ {
-    width: 50%; padding: 1rem
+    width: 50%;
+    padding: 1rem
 }
 
 @media only screen and (max-width: 768px) {

@@ -1,4 +1,4 @@
-@extends('components.layouts.frontend.index')
+@extends('demo-web.components.layouts.frontend.index')
 
 @section('content')
     <div class="home standard_layout">
@@ -6,11 +6,11 @@
             <div class="content_contain" style="padding-bottom: 4.5em;">
                 <div class="page_contain">
                     <div class="contain content-breadcrumb_">
-                        <a href="/">Trang chủ</a><img class="img-breadcrumb_"
-                                                      src="{{asset('img/icons/chevron-right.svg')}}">
-                        <a href="/">Kệ tường</a>
+                        <a href="{{route('demo-web')}}">Trang chủ</a><img class="img-breadcrumb_"
+                                                      src="{{asset('demo/img/icons/chevron-right.svg')}}">
+                        <a href="{{route('demo-web')}}">Kệ tường</a>
                         <img class="img-breadcrumb_"
-                             src="{{asset('img/icons/chevron-right.svg')}}"><span>Tên sản phẩm</span>
+                             src="{{asset('demo/img/icons/chevron-right.svg')}}"><span>Tên sản phẩm</span>
                     </div>
                     <div class="contain">
                         <div class="detail-item_">
@@ -38,7 +38,7 @@
                                         <p style="margin-bottom: 0">Hãy trở thành khách hàng của chúng tôi!!!</p>
                                         <p>SĐT: <b>0382 997 997</b></p>
                                     </div>
-                                    <a href="/" class="btn"><span><img src="{{asset('/img/icons/shopping-cart.svg')}}"
+                                    <a href="{{route('demo-web')}}" class="btn"><span><img src="{{asset('demo/img/icons/shopping-cart.svg')}}"
                                                                        width="20"
                                                                        style="margin-right: 5px"> Đặt mua</span></a>
                                 </div>
@@ -81,8 +81,8 @@
 @endsection
 
 @section('js')
-    <script src="{{asset('js/detail.js')}}"></script>
-    <script src="{{asset('js/zoom.js')}}"></script>
+    <script src="{{asset('demo/js/detail.js')}}"></script>
+    <script src="{{asset('demo/js/zoom.js')}}"></script>
     <script>
         $(document).ready(function () {
             $('#ex2').zoom({on: 'grab'})

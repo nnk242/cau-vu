@@ -513,7 +513,7 @@ code {
     width: 1.0625em;
     height: 1.0625em;
     text-indent: -999em;
-    background: url(/img/icons/search.min.svg) no-repeat 50%;
+    background: url(/demo/img/icons/search.min.svg) no-repeat 50%;
     background-size: contain;
     border: none;
     -webkit-appearance: none;

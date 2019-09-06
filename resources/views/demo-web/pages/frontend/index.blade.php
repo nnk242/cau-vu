@@ -1,4 +1,4 @@
-@extends('components.layouts.frontend.index')
+@extends('demo-web.components.layouts.frontend.index')
 
 @section('content')
     <div class="home standard_layout">
@@ -9,7 +9,7 @@
                         <li class="sys_vapor" style="width: 100%">
                             <a href="#">
                                 <div class="system_icon">
-                                    <img src="/img/ecosystem/vapor.min.svg" alt="Icon"></div>
+                                    <img src="{{asset('demo/img/ecosystem/vapor.min.svg')}}" alt="Icon"></div>
                                 <div class="system_info">Đồ gỗ tiện mỹ nghệ <span>Đồ gỗ tiện mỹ nghệ</span>
                                 </div>
                             </a>
@@ -17,14 +17,14 @@
                         <li class="sys_forge" style="width: 100%">
                             <a href="#">
                                 <div class="system_icon">
-                                    <img src="/img/ecosystem/forge.min.svg" alt="Icon"></div>
+                                    <img src="{{asset('demo/img/ecosystem/forge.min.svg')}}" alt="Icon"></div>
                                 <div class="system_info">Cây nến <span>Cây nến</span></div>
                             </a>
                         </li>
                         <li class="sys_envoyer" style="width: 100%">
                             <a href="#">
                                 <div class="system_icon">
-                                    <img src="/img/ecosystem/envoyer.min.svg" alt="Icon">
+                                    <img src="{{asset('demo/img/ecosystem/envoyer.min.svg')}}" alt="Icon">
                                 </div>
                                 <div class="system_info">Tủ, kệ, điêu khắc <span>Tủ, kệ, điêu khắc</span>
                                 </div>
@@ -33,7 +33,7 @@
                         <li class="sys_horizon" style="width: 100%">
                             <a href="#">
                                 <div class="system_icon">
-                                    <img src="/img/ecosystem/horizon.min.svg" alt="Icon">
+                                    <img src="{{asset('demo/img/ecosystem/horizon.min.svg')}}" alt="Icon">
                                 </div>
                                 <div class="system_info">Đồ thờ <span>Đồ thờ</span>
                                 </div>
@@ -42,7 +42,7 @@
                         <li class="sys_nova" style="width: 100%">
                             <a href="#">
                                 <div class="system_icon">
-                                    <img src="/img/ecosystem/nova.min.svg" alt="Icon"></div>
+                                    <img src="{{asset('demo/img/ecosystem/nova.min.svg')}}" alt="Icon"></div>
                                 <div class="system_info">Bình hoa <span>Bình hoa</span>
                                 </div>
                             </a>
@@ -69,9 +69,9 @@
                     </div>
                     <div class="control-scroll-product_" id="header-control-scroll-product_">
                         <div class="prev-scroll-product_" onclick="plusDivs(-1)"><img
-                                src="{{asset('img/icons/prev.svg')}}"></div>
+                                src="{{asset('demo/img/icons/prev.svg')}}"></div>
                         <div class="next-scroll-product_" onclick="plusDivs(1)"><img
-                                src="{{asset('img/icons/next.svg')}}"></div>
+                                src="{{asset('demo/img/icons/next.svg')}}"></div>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                                     </div>
                                     <h5 class="name-product_">Tên sản phẩm</h5>
                                     <p class="price_">Giá: <b>150.000 vnđ</b></p>
-                                    <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                    <a href="{{route('detail')}}" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                 </div>
                             </div>
                             <div class="hot-product_">
@@ -111,7 +111,7 @@
                                     <h5 class="name-product_">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản
                                         phẩm</h5>
                                     <p class="price_">Giá: <b>150.000 vnđ</b></p>
-                                    <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                    <a href="{{route('detail')}}" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                 </div>
                             </div>
                             <div class="hot-product_">
@@ -124,7 +124,7 @@
                                     <h5 class="name-product_">Tên sản phẩm</h5>
                                     <p class="price_">Giá: <b>150.000 vnđ</b></p>
                                     <p class="product-sale_">Giá gốc: <b>150.000 vnđ</b></p>
-                                    <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                    <a href="{{route('detail')}}" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                 </div>
                             </div>
                             <div class="hot-product_">
@@ -136,7 +136,7 @@
                                     </div>
                                     <h5 class="name-product_">Tên sản phẩm</h5>
                                     <p class="price_">Giá: <b>150.000 vnđ</b></p>
-                                    <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                    <a href="{{route('detail')}}" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                 </div>
                             </div>
                             <div class="hot-product_">
@@ -148,14 +148,14 @@
                                     </div>
                                     <h5 class="name-product_">Tên sản phẩm</h5>
                                     <p class="price_">Giá: <b>150.000 vnđ</b></p>
-                                    <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                    <a href="{{route('detail')}}" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="control-scroll-product_">
-                        <div class="prev-scroll-product_"><img src="{{asset('img/icons/prev.svg')}}"></div>
-                        <div class="next-scroll-product_"><img src="{{asset('img/icons/next.svg')}}"></div>
+                        <div class="prev-scroll-product_"><img src="{{asset('demo/img/icons/prev.svg')}}"></div>
+                        <div class="next-scroll-product_"><img src="{{asset('demo/img/icons/next.svg')}}"></div>
                     </div>
                 </div>
 
@@ -176,7 +176,7 @@
                                 <p class="small">Sản phẩm làm bằng gỗ =))</p>
                                 <p class="price_">Giá: <b>150.000 ₫</b> <span
                                         class="product-sale_">10.690.000 ₫</span></p>
-                                <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                <a href="{{route('detail')}}" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                             </div>
                         </li>
                         <li>
@@ -191,7 +191,7 @@
                                 <p class="small">Sản phẩm làm bằng gỗ =)).</p>
                                 <p class="price_">Giá: <b>150.000 ₫</b> <span
                                         class="product-sale_">10.690.000 ₫</span></p>
-                                <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                <a href="{{route('detail')}}" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                             </div>
                         </li>
                         <li>
@@ -205,7 +205,7 @@
                                 <p class="small">Sản phẩm làm bằng gỗ =)).</p>
                                 <p class="price_">Giá: <b>150.000 ₫</b> <span
                                         class="product-sale_">10.690.000 ₫</span></p>
-                                <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                <a href="{{route('detail')}}" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                             </div>
                         </li>
                         <li>
@@ -219,7 +219,7 @@
                                 <p class="small">Sản phẩm làm bằng gỗ =)).</p>
                                 <p class="price_">Giá: <b>150.000 ₫</b> <span
                                         class="product-sale_">10.690.000 ₫</span></p>
-                                <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                <a href="{{route('detail')}}" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                             </div>
                         </li>
                     @endfor
@@ -240,7 +240,7 @@
                                     </div>
                                     <h5 class="name-product_">Tên sản phẩm</h5>
                                     <p class="price_">Giá: <b>150.000 vnđ</b></p>
-                                    <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                    <a href="{{route('detail')}}" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                 </div>
                             </div>
                             <div class="hot-product_">
@@ -253,7 +253,7 @@
                                     <h5 class="name-product_">Tên sản phẩm Tên sản phẩm Tên sản phẩm Tên sản
                                         phẩm</h5>
                                     <p class="price_">Giá: <b>150.000 vnđ</b></p>
-                                    <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                    <a href="{{route('detail')}}" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                 </div>
                             </div>
                             <div class="hot-product_">
@@ -266,7 +266,7 @@
                                     <h5 class="name-product_">Tên sản phẩm</h5>
                                     <p class="price_">Giá: <b>150.000 vnđ</b></p>
                                     <p class="product-sale_">Giá gốc: <b>150.000 vnđ</b></p>
-                                    <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                    <a href="{{route('detail')}}" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                 </div>
                             </div>
                             <div class="hot-product_">
@@ -278,7 +278,7 @@
                                     </div>
                                     <h5 class="name-product_">Tên sản phẩm</h5>
                                     <p class="price_">Giá: <b>150.000 vnđ</b></p>
-                                    <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                    <a href="{{route('detail')}}" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                 </div>
                             </div>
                             <div class="hot-product_">
@@ -290,14 +290,14 @@
                                     </div>
                                     <h5 class="name-product_">Tên sản phẩm</h5>
                                     <p class="price_">Giá: <b>150.000 vnđ</b></p>
-                                    <a href="/detail" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
+                                    <a href="{{route('detail')}}" class="learn_more">Xem chi tiết sản phẩm <span>→</span></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="control-scroll-product_">
-                        <div class="prev-scroll-product_"><img src="{{asset('img/icons/prev.svg')}}"></div>
-                        <div class="next-scroll-product_"><img src="{{asset('img/icons/next.svg')}}"></div>
+                        <div class="prev-scroll-product_"><img src="{{asset('demo/img/icons/prev.svg')}}"></div>
+                        <div class="next-scroll-product_"><img src="{{asset('demo/img/icons/next.svg')}}"></div>
                     </div>
                 </div>
             </div>
@@ -306,5 +306,5 @@
 @endsection
 
 @section('js')
-    <script src="{{asset('/js/hoang-vu.js')}}"></script>
+    <script src="{{asset('demo/js/hoang-vu.js')}}"></script>
 @endsection

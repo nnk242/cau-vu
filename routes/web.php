@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.frontend.index');
-});
-Route::get('/detail', function () {
-    return view('pages.frontend.detail');
-});
+Route::get('demo-web/', function () {
+    return view('demo-web.pages.frontend.index');
+})->name('demo-web');
+Route::get('demo-web/detail', function () {
+    return view('demo-web.pages.frontend.detail');
+})->name('detail');
 
 
 Auth::routes();

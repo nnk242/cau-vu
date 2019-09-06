@@ -6,7 +6,7 @@
                     <h2>Hãy trở thành khách hàng của chúng tôi!!!</h2>
                     <p>Với nhiều năm tay nghề.</p>
                 </div>
-                <a href="/" class="btn"><span>Liên hệ cho chúng tôi</span></a>
+                <a href="{{route('demo-web')}}" class="btn"><span>Liên hệ cho chúng tôi</span></a>
             </section>
         </div>
 
@@ -97,17 +97,17 @@
                         <p class="small">Đặt hàng liên hệ cho chúng tôi.</p>
                         <p class="small copyright">Sdt: 000000000000.<br>Copyright &copy; 2019 mynghehoangvu.com</p>
                         <ul class="social_links">
-                            <li><a href="https://fb.com"><img src="/img/social/facebook.svg" alt="Facebook" height="24"></a>
+                            <li><a href="https://fb.com"><img src="{{asset('demo/img/social/facebook.svg')}}" alt="Facebook" height="24"></a>
                             </li>
-{{--                            <li><a href="https://github.com/laravel"><img src="/img/social/github.min.svg" alt="GitHub"></a>--}}
+{{--                            <li><a href="https://github.com/laravel"><img src="{{asset('demo/img/social/github.min.svg')}}" alt="GitHub"></a>--}}
 {{--                            </li>--}}
-{{--                            <li><a href="https://discordapp.com/invite/VB3drhA"><img src="/img/social/discord.min.svg" alt="Discord"></a>--}}
+{{--                            <li><a href="https://discordapp.com/invite/VB3drhA"><img src="{{asset('demo/img/social/discord.min.svg')}}" alt="Discord"></a>--}}
 {{--                            </li>--}}
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <a href="/" class="logomark"><img src="/img/logomark.min.svg" alt="Laravel"></a>
+        <a href="{{route('demo-web')}}" class="logomark"><img src="{{asset('demo/img/logomark.min.svg')}}" alt="Laravel"></a>
     </div>
 </footer>

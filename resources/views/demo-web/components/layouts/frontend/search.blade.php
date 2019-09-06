@@ -17,7 +17,7 @@
                                                 <div class="h1">Tiêu đề</div>
                                                 <div class="sub-section">
                                                     <div>
-                                                        <img src="/img/hero/hero_poster.jpg">
+                                                        <img src="{{asset('demo/img/hero/hero_poster.jpg')}}">
                                                     </div>
                                                     <div class="h3">
                                                         value h3
@@ -101,28 +101,3 @@
         <input type="submit" class="search_submit icon_display">
     </div>
 </div>
-<script>
-    $(document).on('focusout', '#search-docs-input', function () {
-        $('.tt-dropdown-menu').hide()
-    })
-
-    $(document).on('keyup', '#search-docs-input', function () {
-        let query = $(this).val()
-        if (query.length !== 0) {
-            $('.tt-dropdown-menu').show()
-        } else {
-            $('.tt-dropdown-menu').hide()
-        }
-    })
-
-    $(document).on('focus', '#search-docs-input', function () {
-        let query = $(this).val()
-        if (query.length !== 0) {
-            $('.tt-dropdown-menu').show()
-        } else {
-            $('.tt-dropdown-menu').hide()
-        }
-    })
-
-    $('.tt-dropdown-menu').hide()
-</script>
