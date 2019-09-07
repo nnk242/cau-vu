@@ -62,9 +62,16 @@ p.small {
 }
 
 .content-product_ {
-    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: -webkit-flex;
+    display: flex;
     flex-direction: column;
+    -webkit-flex-direction: column;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
     height: 100%;
     padding: 2em;
     background: #fff;
@@ -90,8 +97,11 @@ p.small {
 }
 
 .scroll-product-hot_, .scroll-product-hot_ > .items-product-hot_ {
-    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: -webkit-flex;
+    display: flex;
 }
 
 .control-scroll-product_ {
@@ -155,27 +165,35 @@ p.small {
 
 /*hai*/
 .content-header-top_ {
-    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: -webkit-flex;
+    display: flex;
     margin-top: 3em;
     margin-bottom: 3em;
+    flex:1;
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+    height: 100%;
 }
 
 .left-menu-header-top_ {
     width: 30%;
 }
 
-.slider-holder_ {
+.right-menu-header-top_ {
     width: 70%;
+    position: relative;
+}
+
+.slider-holder_ {
+    width: 100%;
 }
 
 .slider-holder_ > .image-holder_ {
     height: 100%;
     background: #fafafa;
-}
-
-.right-menu-header-top_ {
-    position: relative;
 }
 
 .slider-holder_ > .slider-button-holder_ {
@@ -241,8 +259,11 @@ p.small {
 }
 
 .detail-item-all-images_ {
-    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: -webkit-flex;
+    display: flex;
     max-height: 375px;
     width: 50%;
     padding: 1rem;
@@ -324,13 +345,21 @@ p.small {
 }
 
 .detail-item_ {
-    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: -webkit-flex;
+    display: flex;
 }
 
 .detail-item_ > .detail-price_ {
     width: 50%;
     padding: 1rem
+}
+
+.image-product-hot_ {
+    flex-direction: column;
+    -webkit-flex-direction: column;
 }
 
 @media only screen and (max-width: 768px) {
@@ -340,15 +369,16 @@ p.small {
 
     .left-menu-header-top_ {
         display: none;
+        width: 0;
     }
 
     .right-menu-header-top_ {
         width: 100%;
+        height:100%;
     }
 
     .content-header-top_ {
         margin-top: 13em;
-        margin-bottom: 13em;
     }
 
     .slider-holder_ > .slider-button-holder_ {
