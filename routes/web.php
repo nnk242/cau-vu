@@ -18,7 +18,9 @@ Route::get('demo-web/detail', function () {
     return view('demo-web.pages.frontend.detail');
 })->name('detail');
 
-
-Auth::routes();
+Route::group(['prefix' => 'admin'], function () {
+    Auth::routes();
+    Route::resource('category', 'CategoryController');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -2,7 +2,6 @@
     <div class="header_content">
         <a href="{{route('demo-web')}}" class="logo">
             <img class="mark" src="{{asset('demo/img/logomark.min.svg')}}" alt="hoangvu">
-            {{--                <img class="type" src="{{asset('demo/img/logotype.min.svg')}}" alt="hoangvu">--}}
             <span class="type text-logo_">HoangVu</span>
         </a>
         <nav class="main">

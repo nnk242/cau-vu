@@ -568,9 +568,9 @@ code {
     right: 0;
     z-index: 2;
     pointer-events: none;
-    width: .625em;
-    height: .3125em;
-    background: url(/img/icons/drop_arrow.min.svg) no-repeat 50%;
+    width: 1.225em;
+    height: 1.2125em;
+    background: url(/demo/img/icons/caret-down-solid.svg) no-repeat 50%;
     background-size: contain;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%)
@@ -2012,7 +2012,7 @@ ul.ecosystem li.sys_tinker a .system_icon {
     left: 0;
     width: 9px;
     height: 10px;
-    background: url(/img/icons/ul_marker.min.svg) no-repeat 50%;
+    background: url(/demo/img/icons/marker-solid.svg) no-repeat 50%;
     background-size: contain
 }
 
@@ -3383,7 +3383,7 @@ ul.partners_list li img {
     left: 0;
     width: 9px;
     height: 10px;
-    background: url(/img/icons/ul_marker.min.svg) no-repeat 50%;
+    background: url(/demo/img/icons/marker-solid.svg) no-repeat 50%;
     background-size: contain
 }
 
@@ -3615,7 +3615,6 @@ ul.partners_list li img {
 }
 
 .sidebar_layout .sidebar nav .navigation_contain {
-    display: none;
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
     opacity: 0;
@@ -3636,10 +3635,10 @@ ul.partners_list li img {
     padding: .65em 0
 }
 
-.sidebar_layout .sidebar nav .navigation_contain ul li h2 {
+.sidebar_layout .sidebar nav .navigation_contain ul li h2, .sidebar_layout .sidebar nav .navigation_contain ul li h2 > a {
     display: block;
     font-size: .875em;
-    font-weight: 500;
+    font-weight: bold;
     color: #090910;
     text-decoration: none;
     margin-bottom: 0;
@@ -3684,7 +3683,7 @@ ul.partners_list li img {
     left: 0;
     width: .5rem;
     height: .5rem;
-    background: url(/img/icons/active_marker.min.svg) no-repeat 50%
+    background: url(/demo/img/icons/circle.svg) no-repeat 50%
 }
 
 .sidebar_layout .sidebar nav .navigation_contain ul li.sub--on > h2 {
@@ -4012,7 +4011,7 @@ ul.partners_list li img {
     left: 0;
     width: 9px;
     height: 10px;
-    background: url(/img/icons/ul_marker.min.svg) no-repeat 50%;
+    background: url(/demo/img/icons/marker-solid.svg) no-repeat 50%;
     background-size: contain
 }
 
