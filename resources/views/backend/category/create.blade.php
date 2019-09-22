@@ -1,7 +1,7 @@
 @extends('demo-web.components.layouts.backend.index')
 @section('content')
     <h1>Thêm danh mục</h1>
-    <form method="POST">
+    <form method="POST" action="{{route('category.store')}}">
         @csrf
         <div class="form-group">
             <label>Nhập tên danh mục</label>
