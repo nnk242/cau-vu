@@ -1,10 +1,14 @@
 @extends('demo-web.components.layouts.backend.index')
 @section('content')
-    <h1>Thêm danh mục</h1>
-    <form method="POST" action="{{ route('category.update', ['id' => $category->id]) }}">
+    <h1>Sửa danh mục {{ $category->id }}</h1>
+    @isset($category->image)
+        <img class="image-edit_" src="{{ asset('img/upload/' . $category->image) }}">
+    @endisset
+    <form method="POST" action="{{ route('category.update', ['id' => $category->id]) }}" enctype="multipart/form-data">
         @csrf
         {{ method_field('PUT') }}
         <div class="form-group">
+            <label>Url người dùng thấy</label>
             <input type="text" class="form-control" placeholder="Điều hướng trang web"
                    value="{{ $category->name_unicode }}" readonly required>
         </div>

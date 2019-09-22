@@ -21,12 +21,18 @@
             <tr>
                 <td>{{ $key + 1 }}</td>
                 <td><code class=" language-php">{{ $value->name }}</code></td>
-                <td>{{ $value->image }}</td>
+                <td>
+                    @isset($value->image)
+                        <img class="image-table_" src="{{ asset('img/upload/' . $value->image) }}">
+                    @endisset
+                </td>
                 <td>{{ $value->description }}</td>
                 <td>{{ $value->user->name }}</td>
                 <td>{{ $value->created_at }}</td>
                 <td><a href="{{ route('category.edit', ['id' => $value->id]) }}" class="action_ action-edit_"><img
                             src="{{ asset('img/icon/edit.svg') }}"></a>
+                    <a href="{{ route('category.show', ['id' => $value->id]) }}" class="action_ action-show_"><img
+                            src="{{ asset('img/icon/eye.svg') }}"></a>
                     <a href="#delete-item" class="action_ action-delete_" data-toggle="modal"
                        data-target=".delete-item" data-id="{{ $value->id }}"><img
                             src="{{ asset('img/icon/trash.svg') }}"></a></td>

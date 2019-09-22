@@ -371,8 +371,26 @@ p.small {
     width: 15px;
 }
 
+.action-show_ > img {
+    width: 17px;
+}
+
 .action-delete_ > img {
     width: 12px;
+}
+
+.image-table_ {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.image-edit_ {
+    margin: 10px auto;
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
 }
 
 @media only screen and (max-width: 768px) {
