@@ -1,14 +1,11 @@
 @extends('components.layouts.backend.index')
 @section('content')
     <h1>Tất cả sản phẩm</h1>
-    @component('components.callout.exclamation')
-        Khi xóa danh mục thì bạn có thể xóa tất cả sản phẩm thuộc danh mục đó
-    @endcomponent
     <table>
         <thead>
         <tr>
             <th>###</th>
-            <th>Tên danh mục</th>
+            <th>Tên sản phẩm</th>
             <th>Hình ảnh</th>
             <th>Thới thiệu</th>
             <th>Người tạo</th>
