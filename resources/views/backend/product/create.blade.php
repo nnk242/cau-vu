@@ -1,8 +1,4 @@
 @extends('components.layouts.backend.index')
-@section('css')
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
-@endsection
 @section('content')
     <h1>Thêm danh mục</h1>
     <form method="POST" action="{{route('category.store')}}" enctype="multipart/form-data">
@@ -17,11 +13,24 @@
         </div>
         <div class="form-group">
             <label>Chọn danh mục sản phẩm</label>
-            <select class="form-control selectpicker" multiple>
-                @foreach($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                @endforeach
-            </select>
+        </div>
+        <div class="form-group">
+            @foreach($categories as $category)
+                <label class="checkbox-inline"><input type="checkbox" value="{{ $category->id }}"
+                                                      name="categoies">{{ $category->name }}</label>
+            @endforeach
+        </div>
+        <div class="form-group">
+            <label>Nhập giá tiền gốc</label>
+            <input type="text" class="form-control" id="price" placeholder="Nhập giá tiền..." name="price" required>
+        </div>
+
+        <div class="form-group">
+            <label>Giảm giá khuyến mại</label>
+            <input type="number" min="0" max="100" class="form-control" id="discount" placeholder="Nhập % giảm giá..." name="discount" required>
+        </div>
+        <div class="form-group">
+            <label><span style="font-weight: bold;">Thành tiền:</span> <span id="final_price"></span></label>
         </div>
         <div class="form-group">
             <label>Hình ảnh</label>
@@ -30,6 +39,23 @@
         <button type="submit" class="btn_">Thêm danh mục</button>
     </form>
 @endsection
+
 @section('js')
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <script>
+        $('#price').on('keyup', function () {
+            let real_price = parseInt(numeral($(this).val()))
+            let price = numeral(real_price).format('0,0')
+            $(this).val(price)
+            $('#final_price').empty()
+
+            let discount = $('#discount').val()
+            if(discount) {
+                price = real_price - real_price*
+                $('#final_price').append(price + ' ₫')
+            } else {
+                $('#final_price').append(price + ' ₫')
+            }
+        })
+    </script>
 @endsection

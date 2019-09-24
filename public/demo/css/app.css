@@ -371,15 +371,15 @@ span.small_text {
 
 label, span.label, span.small_text {
     display: block;
-    font-size: .625em;
+    font-size: .875em;
     line-height: 1.4em
 }
 
 label, span.label {
-    text-transform: uppercase;
-    opacity: .4;
-    margin-bottom: .875em;
-    letter-spacing: 2.5px
+    /*text-transform: uppercase;*/
+    /*opacity: .4;*/
+    /*margin-bottom: .875em;*/
+    /*letter-spacing: 2.5px*/
 }
 
 code {
