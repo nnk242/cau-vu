@@ -1463,88 +1463,88 @@ ul.ecosystem li a .system_icon img {
     max-height: 2.5em
 }
 
-ul.ecosystem li a .system_info {
-    flex: 1;
-    font-size: 1em;
-}
+/*ul.ecosystem li a .system_info {*/
+/*    flex: 1;*/
+/*    font-size: 1em;*/
+/*}*/
 
-ul.ecosystem li a .system_info span {
-    display: block;
-    color: rgba(9, 9, 16, .4);
-    font-size: .75rem;
-}
+/*ul.ecosystem li a .system_info span {*/
+/*    display: block;*/
+/*    color: rgba(9, 9, 16, .4);*/
+/*    font-size: .75rem;*/
+/*}*/
 
-ul.ecosystem li.sys_vapor a .system_icon {
-    background: #25c4f2
-}
+/*ul.ecosystem li.sys_vapor a .system_icon {*/
+/*    background: #25c4f2*/
+/*}*/
 
-ul.ecosystem li.sys_forge a .system_icon {
-    background: #1eb786
-}
+/*ul.ecosystem li.sys_forge a .system_icon {*/
+/*    background: #1eb786*/
+/*}*/
 
-ul.ecosystem li.sys_envoyer a .system_icon {
-    background: #f56857
-}
+/*ul.ecosystem li.sys_envoyer a .system_icon {*/
+/*    background: #f56857*/
+/*}*/
 
-ul.ecosystem li.sys_horizon a .system_icon {
-    background: #8c6ed3
-}
+/*ul.ecosystem li.sys_horizon a .system_icon {*/
+/*    background: #8c6ed3*/
+/*}*/
 
-ul.ecosystem li.sys_nova a .system_icon {
-    background: #4099de
-}
+/*ul.ecosystem li.sys_nova a .system_icon {*/
+/*    background: #4099de*/
+/*}*/
 
-ul.ecosystem li.sys_echo a .system_icon {
-    background: #4ab2b0
-}
+/*ul.ecosystem li.sys_echo a .system_icon {*/
+/*    background: #4ab2b0*/
+/*}*/
 
-ul.ecosystem li.sys_lumen a .system_icon {
-    background: #f6ae7a
-}
+/*ul.ecosystem li.sys_lumen a .system_icon {*/
+/*    background: #f6ae7a*/
+/*}*/
 
-ul.ecosystem li.sys_homestead a .system_icon {
-    background: #e7801c
-}
+/*ul.ecosystem li.sys_homestead a .system_icon {*/
+/*    background: #e7801c*/
+/*}*/
 
-ul.ecosystem li.sys_spark a .system_icon {
-    background: #f0c376
-}
+/*ul.ecosystem li.sys_spark a .system_icon {*/
+/*    background: #f0c376*/
+/*}*/
 
-ul.ecosystem li.sys_valet a .system_icon {
-    background: #5e47cd
-}
+/*ul.ecosystem li.sys_valet a .system_icon {*/
+/*    background: #5e47cd*/
+/*}*/
 
-ul.ecosystem li.sys_mix a .system_icon {
-    background: #294ba5
-}
+/*ul.ecosystem li.sys_mix a .system_icon {*/
+/*    background: #294ba5*/
+/*}*/
 
-ul.ecosystem li.sys_cashier a .system_icon {
-    background: #91d630
-}
+/*ul.ecosystem li.sys_cashier a .system_icon {*/
+/*    background: #91d630*/
+/*}*/
 
-ul.ecosystem li.sys_dusk a .system_icon {
-    background: #bb358b
-}
+/*ul.ecosystem li.sys_dusk a .system_icon {*/
+/*    background: #bb358b*/
+/*}*/
 
-ul.ecosystem li.sys_passport a .system_icon {
-    background: #7dd9f2
-}
+/*ul.ecosystem li.sys_passport a .system_icon {*/
+/*    background: #7dd9f2*/
+/*}*/
 
-ul.ecosystem li.sys_scout a .system_icon {
-    background: #f55d5c
-}
+/*ul.ecosystem li.sys_scout a .system_icon {*/
+/*    background: #f55d5c*/
+/*}*/
 
-ul.ecosystem li.sys_socialite a .system_icon {
-    background: #e394ba
-}
+/*ul.ecosystem li.sys_socialite a .system_icon {*/
+/*    background: #e394ba*/
+/*}*/
 
-ul.ecosystem li.sys_telescope a .system_icon {
-    background: #4040c8
-}
+/*ul.ecosystem li.sys_telescope a .system_icon {*/
+/*    background: #4040c8*/
+/*}*/
 
-ul.ecosystem li.sys_tinker a .system_icon {
-    background: #ec7658
-}
+/*ul.ecosystem li.sys_tinker a .system_icon {*/
+/*    background: #ec7658*/
+/*}*/
 
 @media (min-width: 40em) {
     ul.ecosystem li {

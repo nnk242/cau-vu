@@ -11,16 +11,19 @@
 |
 */
 
-Route::get('demo-web/', function () {
+Route::get('demo-web', function () {
     return view('demo-web.pages.frontend.index');
 })->name('demo-web');
 Route::get('demo-web/detail', function () {
     return view('demo-web.pages.frontend.detail');
 })->name('detail');
 
+Route::get('/', 'Frontend\HomeController@index');
+
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
     Route::resource('category', 'CategoryController');
+    Route::resource('product', 'ProductController');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
