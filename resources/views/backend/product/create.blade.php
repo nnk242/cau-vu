@@ -1,4 +1,7 @@
 @extends('components.layouts.backend.index')
+@section('css')
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+@endsection
 @section('content')
     <h1 class="mb-3">Thêm sản phẩm</h1>
     <form method="POST" action="{{route('product.store')}}" enctype="multipart/form-data">
@@ -43,6 +46,10 @@
                     <label><span style="font-weight: bold;">Khuyến mại (%):</span> <span
                             id="discount">0.00%</span></label>
                 </div>
+                <div class="form-group">
+                    <label>Ngày khuyến mại (Để trống có nghĩa là đang khuyến mại)</label>
+                    <input type="text" name="daterange" class="form-control" />
+                </div>
             </div>
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                 <div class="form-group">
@@ -62,6 +69,9 @@
 
 @section('js')
     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script>
         $('#price').on('keyup', function () {
             let real_price = numeral($('#price').val())
@@ -147,9 +157,16 @@
         })
 
         $(document).on('click', '.close-image-upload_', function () {
-            console.log(123)
             $(this).parent('.data-upload_').empty()
         })
+
+        $(function() {
+            $('input[name="daterange"]').daterangepicker({
+                opens: 'left'
+            }, function(start, end, label) {
+                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+            });
+        });
 
     </script>
 @endsection
