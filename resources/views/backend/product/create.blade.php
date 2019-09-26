@@ -47,7 +47,12 @@
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                 <div class="form-group">
                     <label>Hình ảnh</label>
-                    <input type="file" class="form-control" name="image">
+                </div>
+                <div class="form-group">
+                    <label class="btn btn-secondary" for="imgInp">Hình ảnh</label>
+                    <input type="file" id="imgInp" class="form-control d-none" required>
+                </div>
+                <div class="form-group" id="show-image">
                 </div>
             </div>
         </div>
@@ -119,5 +124,32 @@
             $('#discount').empty()
             $('#discount').append(discount)
         })
+
+        $("#imgInp").change(function () {
+            if (this.files && this.files[0]) {
+                var reader = new FileReader()
+                var clone = $(this).clone()
+                reader.onload = function (e) {
+                    let result = e.target.result
+                    let last_data_id = ($('.data-upload_').last()).attr('data-upload-id')
+                    last_data_id = last_data_id ? parseInt(last_data_id) + 1 : 0
+
+                    $('#show-image').append(
+                        '<div class="data-upload_" data-upload-id="' + last_data_id + '">' +
+                        '<input type="file" class="form-control d-none" name="image[]" value="' + clone + '">' +
+                        '<img src="' + result + '">' +
+                        '<span class="close-image-upload_">X</span>' +
+                        '</div>')
+                }
+
+                reader.readAsDataURL(this.files[0])
+            }
+        })
+
+        $(document).on('click', '.close-image-upload_', function () {
+            console.log(123)
+            $(this).parent('.data-upload_').empty()
+        })
+
     </script>
 @endsection
