@@ -14,9 +14,12 @@
 Route::get('demo-web', function () {
     return view('demo-web.pages.frontend.index');
 })->name('demo-web');
+
 Route::get('demo-web/detail', function () {
     return view('demo-web.pages.frontend.detail');
 })->name('detail');
+
+Route::get('{id}/danh-muc', 'frontend/HomeController@category');
 
 Route::get('/', 'Frontend\HomeController@index');
 

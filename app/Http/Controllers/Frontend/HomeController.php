@@ -15,4 +15,8 @@ class HomeController extends Controller
         $new_products = Product::orderby('id', 'DESC')->take(10)->get();
         return view('frontend.index', compact('categories', 'new_products'));
     }
+
+    public function category() {
+        return 1;
+    }
 }

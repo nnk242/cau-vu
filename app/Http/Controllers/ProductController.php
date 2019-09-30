@@ -35,6 +35,7 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        $request->request->all();
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',

@@ -18,8 +18,13 @@ class CreateProductsTable extends Migration
             $table->string('name', 255);
             $table->string('name_unicode', 265)->unique();
             $table->mediumText('description')->nullable();
-            $table->string('image', 500)->nullable();
-            $table->string('category_ids');
+            $table->text('images')->nullable();
+            $table->integer('price')->nullable();
+            $table->integer('promotion_price')->nullable();
+            $table->integer('time_begin')->nullable();
+            $table->integer('time_end')->nullable();
+            $table->mediumText('description')->nullable();
+            $table->smallInteger('status')->default(0);
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
