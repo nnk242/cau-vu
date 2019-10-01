@@ -19,11 +19,6 @@
                     <input type="text" class="form-control" placeholder="Nhập tên sản phẩm" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label>Giới thiệu</label>
-                    <textarea type="text" class="form-control" placeholder="Giới thiệu sản phẩm"
-                              name="description"></textarea>
-                </div>
-                <div class="form-group">
                     <label>Danh mục sản phẩm</label>
                 </div>
                 <div class="form-group">
@@ -48,7 +43,12 @@
                 </div>
                 <div class="form-group">
                     <label>Ngày khuyến mại (Để trống có nghĩa là đang khuyến mại)</label>
-                    <input type="text" name="daterange" class="form-control" />
+                    <input type="text" name="daterange" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label>Giới thiệu</label>
+                    <textarea type="text" class="form-control" placeholder="Giới thiệu sản phẩm" id="description"
+                              name="description"></textarea>
                 </div>
             </div>
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
@@ -59,8 +59,7 @@
                     <label class="btn btn-secondary" for="imgInp">Hình ảnh</label>
                     <input type="file" id="imgInp" class="form-control d-none" required>
                 </div>
-                <div class="form-group" id="show-image">
-                </div>
+                <div class="form-group" id="show-image"></div>
             </div>
         </div>
         <button type="submit" class="btn_">Thêm danh mục</button>
@@ -72,7 +71,9 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script>
+        CKEDITOR.replace('description')
         $('#price').on('keyup', function () {
             let real_price = numeral($('#price').val())
 
@@ -139,17 +140,23 @@
             if (this.files && this.files[0]) {
                 var reader = new FileReader()
                 var clone = $(this).clone()
+                clone.attr('id', '')
+                clone.attr('name', 'images[]')
+                clone.attr('class', 'd-none')
                 reader.onload = function (e) {
                     let result = e.target.result
                     let last_data_id = ($('.data-upload_').last()).attr('data-upload-id')
                     last_data_id = last_data_id ? parseInt(last_data_id) + 1 : 0
 
+                    console.log(clone)
+
                     $('#show-image').append(
                         '<div class="data-upload_" data-upload-id="' + last_data_id + '">' +
-                        '<input type="file" class="form-control d-none" name="image[]" value="' + clone + '">' +
                         '<img src="' + result + '">' +
                         '<span class="close-image-upload_">X</span>' +
                         '</div>')
+
+                    $('#show-image').append(clone)
                 }
 
                 reader.readAsDataURL(this.files[0])
@@ -160,10 +167,10 @@
             $(this).parent('.data-upload_').empty()
         })
 
-        $(function() {
+        $(function () {
             $('input[name="daterange"]').daterangepicker({
                 opens: 'left'
-            }, function(start, end, label) {
+            }, function (start, end, label) {
                 console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
             });
         });

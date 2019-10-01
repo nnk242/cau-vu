@@ -21,7 +21,7 @@ class UploadFile
         $image_name = null;
 
         if (isset($image)) {
-            $image_name = date('Y_m_d', time()) . '_' . time() . generateRandomString(5) . '.' . request()->image->getClientOriginalExtension();
+            $image_name = date('Y_m_d', time()) . '_' . time() . '_' . generateRandomString(5) . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('img/upload'), $image_name);
         }
         return $image_name;

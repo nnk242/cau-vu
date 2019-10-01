@@ -35,17 +35,21 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $request->request->all();
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         if ($validator->fails()) {
             return redirect()->back()->with('error', $validator->errors()->first());
         }
-
-        $image_name = UploadFile::uploadFile($request->image);
+        $image_name = '';
+        foreach ($request->images as $key => $image) {
+            if ($key != 0) {
+                $image_name = $image_name . ',';
+            }
+            $image_name = $image_name . UploadFile::uploadFile($image);
+        }
 
         $name_unicode = str_seo($request->name);
 
@@ -55,14 +59,43 @@ class ProductController extends Controller
             $name_unicode = $name_unicode . '-' . generateRandomString(3) . '-' . time() . '-' . generateRandomString(3);
         }
 
+        $time_begin = 0;
+        $time_end = 0;
+
+        if ($request->daterange) {
+            $arr_daterange = explode('-', $request->daterange);
+            if (count($arr_daterange)) {
+                $time_begin = strtotime($arr_daterange[0]);
+                $time_end = strtotime($arr_daterange[1]);
+            }
+
+            $temp = 0;
+
+            if ($time_begin > $time_end) {
+                $temp = $time_begin;
+                $time_begin = $time_end;
+                $time_end = $temp;
+            }
+        }
+
+        $price = preg_replace('/[^0-9]/', '', $request->price);
+
+        $promotion_price = preg_replace('/[^0-9]/', '', $request->promotion_price);
+
+        $data = [
+            'name' => $request->name,
+            'name_unicode' => $name_unicode,
+            'description' => $request->description,
+            'images' => $image_name,
+            'user_id' => Auth::id(),
+            'price' => (int)$price,
+            'promotion_price' => (int)$promotion_price,
+            'time_begin' => $time_begin,
+            'time_end' => $time_end
+        ];
+
         $this->model()::create(
-            array(
-                'name' => $request->name,
-                'name_unicode' => $name_unicode,
-                'description' => $request->description,
-                'image' => $image_name,
-                'user_id' => Auth::id()
-            )
+            $data
         );
 
         return redirect()->back()->with('success', 'Lưu thành công!');

@@ -7,7 +7,7 @@
                 <ul class="ecosystem">
                     @foreach($categories as $category)
                         <li style="width: 100%">
-                            <a href="#">
+                            <a href="{{ route('danh-muc', ['id' => $category->name_unicode]) }}">
                                 <div class="system_icon">
                                     <img src="{{ asset($category->image ? 'img/upload/' . $category->image : 'img/icon/archive.svg') }}" alt="Icon"></div>
                                 <div class="system_info">{{ $category->name }} <span>{{ str_limit($category->description, 15) }}</span>

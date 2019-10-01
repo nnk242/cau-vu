@@ -9,7 +9,9 @@ class Product extends Model
 {
     protected $table = 'products';
 
-    protected $fillable = ['name', 'name_unicode', 'description', 'image', 'category_ids', 'user_id'];
+    protected $fillable = ['name', 'name_unicode', 'description', 'images', 'user_id',
+        'price', 'promotion_price', 'time_begin', 'time_end', 'status'
+        ];
 
     public function user()
     {

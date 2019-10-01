@@ -16,7 +16,13 @@ class HomeController extends Controller
         return view('frontend.index', compact('categories', 'new_products'));
     }
 
-    public function category() {
-        return 1;
+    public function category($name_unicode)
+    {
+        $category = Category::wherename_unicode($name_unicode)->first();
+        $products = Product::select('products.*')
+            ->where('category_product.category_id', $category->id)
+            ->join('category_product', 'category_product.product_id', '=', 'products.id')
+            ->paginate(10);
+        return $products;
     }
 }

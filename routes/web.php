@@ -19,7 +19,7 @@ Route::get('demo-web/detail', function () {
     return view('demo-web.pages.frontend.detail');
 })->name('detail');
 
-Route::get('{id}/danh-muc', 'frontend/HomeController@category');
+Route::get('{name_unicode}/danh-muc', 'Frontend\HomeController@category')->name('danh-muc');
 
 Route::get('/', 'Frontend\HomeController@index');
 
