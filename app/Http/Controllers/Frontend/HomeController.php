@@ -18,11 +18,20 @@ class HomeController extends Controller
 
     public function category($name_unicode)
     {
-        $category = Category::wherename_unicode($name_unicode)->first();
-        $products = Product::select('products.*')
-            ->where('category_product.category_id', $category->id)
-            ->join('category_product', 'category_product.product_id', '=', 'products.id')
-            ->paginate(10);
-        return $products;
+        if ($name_unicode === 'khac.hv') {
+            $products = Product::select('products.*')
+                ->leftJoin('category_product', function ($join) {
+                    $join->on('category_product.product_id', '=', 'products.id');
+                })
+                ->paginate(10);
+            return view('frontend.category', compact('products'));
+        } else {
+            $category = Category::wherename_unicode($name_unicode)->firstorfail();
+            $products = Product::select('products.*')
+                ->where('category_product.category_id', $category->id)
+                ->join('category_product', 'category_product.product_id', '=', 'products.id')
+                ->paginate(10);
+        }
+        return view('frontend.category', compact('products'));
     }
 }

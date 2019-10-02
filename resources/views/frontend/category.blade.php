@@ -1,60 +1,6 @@
 @extends('demo-web.components.layouts.frontend.index')
 
 @section('content')
-    <div style="max-width: 80em; height: auto; padding: 1px; margin: 0 auto">
-        <div class="content-header-top_">
-            <div class="left-menu-header-top_">
-                <ul class="ecosystem">
-                    @foreach($categories as $category)
-                        <li style="width: 100%">
-                            <a href="{{ route('danh-muc', ['id' => $category->name_unicode]) }}">
-                                <div class="system_icon">
-                                    <img
-                                        src="{{ asset($category->image ? 'img/upload/' . $category->image : 'img/icon/archive.svg') }}"
-                                        alt="Icon"></div>
-                                <div class="system_info">{{ $category->name }}
-                                    <span>{{ str_limit($category->description, 15) }}</span>
-                                </div>
-                            </a>
-                        </li>
-                    @endforeach
-                    <li style="width: 100%">
-                        <a href="{{ url('khac.hv/danh-muc') }}">
-                            <div class="system_icon"><img src="{{ asset('img/icon/archive.svg') }}" alt="Icon"></div>
-                            <div class="system_info">Khác</div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="right-menu-header-top_">
-                <div class="slider-holder_">
-                    <div class="image-holder_">
-                        <img
-                            src="https://66.media.tumblr.com/a8e3c2a519fa0bfad2f9c562dd33ccc0/tumblr_pvjg6bpkKe1rogvb0o1_1280.jpg"
-                            class="slider-image_"/>
-                        <img
-                            src="https://66.media.tumblr.com/9cea6215dc83cd113d1d0d485636eb19/tumblr_psieapK3X01rogvb0o1_1280.jpg"
-                            class="slider-image_"/>
-                        <img
-                            src="https://66.media.tumblr.com/02bf725cc58f7012fed1a78e33e9e9f3/tumblr_psiealE4b31rogvb0o1_1280.jpg"
-                            class="slider-image_"/>
-                    </div>
-                    <div class="slider-button-holder_">
-                        <div class="slider-image-dot_ active-slide_" ref="1"
-                             onclick="currentDiv(1, this)"></div>
-                        <div class="slider-image-dot_" ref="2" onclick="currentDiv(2, this)"></div>
-                        <div class="slider-image-dot_" ref="3" onclick="currentDiv(3, this)"></div>
-                    </div>
-                    <div class="control-scroll-product_" id="header-control-scroll-product_">
-                        <div class="prev-scroll-product_" onclick="plusDivs(-1)"><img
-                                src="{{asset('demo/img/icons/prev.svg')}}"></div>
-                        <div class="next-scroll-product_" onclick="plusDivs(1)"><img
-                                src="{{asset('demo/img/icons/next.svg')}}"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="contain">
         <div class="partners_block content_block bg_left">
             <div class="bg">
