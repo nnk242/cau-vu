@@ -46,6 +46,13 @@
                     <input type="text" name="daterange" class="form-control"/>
                 </div>
                 <div class="form-group">
+                    <label>Chọn loại(Muốn dừng slide bạn hãy vào sửa thành sản phẩm bình thường)</label>
+                    <select class="form-control" name="type">
+                        <option value="normal">Sản phẩm bình thường</option>
+                        <option value="slide">Chạy slide</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label>Giới thiệu</label>
                     <textarea type="text" class="form-control" placeholder="Giới thiệu sản phẩm" id="description"
                               name="description"></textarea>
@@ -60,9 +67,23 @@
                     <input type="file" id="imgInp" class="form-control d-none" required>
                 </div>
                 <div class="form-group" id="show-image"></div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="status" id="hide_" value="0">
+                    <label class="form-check-label" for="hide_">
+                        Ẩn sản phẩm
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="status" id="show_" value="1" checked>
+                    <label class="form-check-label" for="show_">
+                        Hiện sản phẩm
+                    </label>
+                </div>
             </div>
         </div>
-        <button type="submit" class="btn_">Thêm danh mục</button>
+        <div class="form-group" style="margin-top: 20px">
+            <button type="submit" class="btn_">Thêm danh mục</button>
+        </div>
     </form>
 @endsection
 

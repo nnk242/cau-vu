@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
             $table->integer('time_end')->nullable();
             $table->mediumText('description')->nullable();
             $table->smallInteger('status')->default(0);
+            $table->enum('type', ['normal', 'slide'])->default('normal');
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
