@@ -37,6 +37,7 @@ class ProductController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
+            'price' => 'required',
             'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
@@ -69,7 +70,94 @@ class ProductController extends Controller
                 $time_end = strtotime($arr_daterange[1]);
             }
 
-            $temp = 0;
+            if ($time_begin > $time_end) {
+                $temp = $time_begin;
+                $time_begin = $time_end;
+                $time_end = $temp;
+            }
+        }
+
+        $price = preg_replace('/[^0-9]/', '', $request->price);
+
+        $promotion_price = preg_replace('/[^0-9]/', '', $request->promotion_price);
+
+        $data = [
+            'name' => $request->name,
+            'name_unicode' => $name_unicode,
+            'description' => $request->description,
+            'images' => $image_name,
+            'user_id' => Auth::id(),
+            'price' => (int)$price,
+            'promotion_price' => (int)$promotion_price,
+            'time_begin' => $time_begin,
+            'time_end' => $time_end,
+            'status' => (int)$request->status == 1 ? $request->status : 0,
+            'type' => $request->type == 'slide' ? 'slide' : 'normal'
+        ];
+
+        $this->model()::create(
+            $data
+        );
+
+        return redirect()->back()->with('success', 'Lưu thành công!');
+    }
+
+    public function show(Product $product)
+    {
+        return view('backend.product.show', compact('product'));
+    }
+
+    public function edit(Product $product)
+    {
+        return view('backend.product.edit', compact('product'));
+    }
+
+    public function update(Request $request, Product $product)
+    {
+        dd($product);
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:255',
+            'price' => 'required',
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->with('error', $validator->errors()->first());
+        }
+        $image_name = '';
+        foreach ($request->images as $key => $image) {
+            if ($key != 0) {
+                $image_name = $image_name . ',';
+            }
+            $image_name = $image_name . UploadFile::uploadFile($image);
+        }
+
+        $string_image = $product->images;
+
+        if ($string_image) {
+            $arr_image = explode(',', $string_image);
+            foreach ($arr_image as $value) {
+                UploadFile::removeFile('img/upload/' . $value);
+            }
+        }
+
+        $name_unicode = str_seo($request->name);
+
+        $count_name_unicode = $this->model()::wherename_unicode($name_unicode)->count();
+
+        if ($count_name_unicode) {
+            $name_unicode = $name_unicode . '-' . generateRandomString(3) . '-' . time() . '-' . generateRandomString(3);
+        }
+
+        $time_begin = 0;
+        $time_end = 0;
+
+        if ($request->daterange) {
+            $arr_daterange = explode('-', $request->daterange);
+            if (count($arr_daterange)) {
+                $time_begin = strtotime($arr_daterange[0]);
+                $time_end = strtotime($arr_daterange[1]);
+            }
 
             if ($time_begin > $time_end) {
                 $temp = $time_begin;
@@ -91,75 +179,30 @@ class ProductController extends Controller
             'price' => (int)$price,
             'promotion_price' => (int)$promotion_price,
             'time_begin' => $time_begin,
-            'time_end' => $time_end
+            'time_end' => $time_end,
+            'status' => (int)$request->status == 1 ? $request->status : 0,
+            'type' => $request->type == 'slide' ? 'slide' : 'normal'
         ];
 
-        $this->model()::create(
+        $product::update(
             $data
         );
 
         return redirect()->back()->with('success', 'Lưu thành công!');
     }
 
-    public function show(Category $category)
+    public function destroy(Product $product)
     {
-        return view('backend.category.show', compact('category'));
-    }
+        $string_image = $product->images;
 
-    public function edit(Category $category)
-    {
-        return view('backend.category.edit', compact('category'));
-    }
-
-    public function update(Request $request, Category $category)
-    {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()->back()->with('error', $validator->errors()->first());
-        }
-
-        $image_name = $category->image;
-
-        if (isset($request->image)) {
-            if ($image_name) {
-                UploadFile::removeFile('img/upload/' . $image_name);
-            }
-            $image_name = UploadFile::uploadFile($request->image);
-        }
-
-        $name = $request->name;
-        if ($name == $category->name) {
-            $name_unicode = $category->name_unicode;
-        } else {
-            $name_unicode = str_seo($name);
-            $count_name_unicode = $this->model()::wherename_unicode($name_unicode)->count();
-            if ($count_name_unicode) {
-                $name_unicode = str_seo($name) . '-' . generateRandomString(3) . '-' . time() . '-' . generateRandomString(3);
+        if ($string_image) {
+            $arr_image = explode(',', $string_image);
+            foreach ($arr_image as $value) {
+                UploadFile::removeFile('img/upload/' . $value);
             }
         }
-        $category->update([
-            'name' => $name,
-            'name_unicode' => $name_unicode,
-            'image' => $image_name,
-            'description' => $request->description
-        ]);
 
-        return redirect()->back()->with('success', 'Lưu thành công!');
-    }
-
-    public function destroy(Category $category)
-    {
-        $image_name = $category->image;
-
-        if ($image_name) {
-            UploadFile::removeFile('img/upload/' . $image_name);
-        }
-
-        $category->delete();
+        $product->delete();
         return redirect()->back()->with('success', 'Xóa thành công!');
     }
 }

@@ -12,14 +12,17 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $new_products = Product::orderby('id', 'DESC')->take(10)->get();
-        return view('frontend.index', compact('categories', 'new_products'));
+        $slides = Product::wheretype('slide')->get();
+        $new_products = Product::where('type', '!=', 'slide')->wherestatus(1)->orderby('id', 'DESC')->take(10)->get();
+        $products = Product::orderby('id', 'DESC')->wherestatus(1)->paginate(10);
+        return view('frontend.index', compact('categories', 'new_products', 'slides', 'products'));
     }
 
     public function category($name_unicode)
     {
         if ($name_unicode === 'khac.hv') {
             $products = Product::select('products.*')
+                ->where('products.status', 1)
                 ->leftJoin('category_product', function ($join) {
                     $join->on('category_product.product_id', '=', 'products.id');
                 })
@@ -29,6 +32,7 @@ class HomeController extends Controller
             $category = Category::wherename_unicode($name_unicode)->firstorfail();
             $products = Product::select('products.*')
                 ->where('category_product.category_id', $category->id)
+                ->where('products.status', 1)
                 ->join('category_product', 'category_product.product_id', '=', 'products.id')
                 ->paginate(10);
         }

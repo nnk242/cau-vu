@@ -35,7 +35,7 @@ async function plusDivs(n) {
 
 function showDivs(n) {
     let i
-    let x = document.getElementsByClassName("slider-image_");
+    let x = document.getElementsByClassName("slider-image_")
     if (n > x.length) {
         slideIndex = 1
     }
@@ -43,9 +43,12 @@ function showDivs(n) {
         slideIndex = x.length
     }
     for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
+        x[i].style.display = "none"
     }
-    x[slideIndex - 1].style.display = "block"
+
+    if (x.length !== 0) {
+        x[slideIndex - 1].style.display = "block"
+    }
 
     return slideIndex
 }
@@ -72,15 +75,18 @@ function carousel() {
     myIndex++
 
     let active_slide = document.getElementsByClassName('active-slide_')[0]
-    active_slide.classList.remove('active-slide_')
+    if (typeof active_slide !== "undefined") {
+        active_slide.classList.remove('active-slide_')
+    }
 
     if (myIndex > x.length) {
         myIndex = 1
     }
-    {
+    if (x.length !== 0) {
         x[myIndex - 1].style.display = "block"
     }
-    (document.getElementsByClassName('slider-image-dot_')[myIndex - 1]).classList.add('active-slide_')
+    if (typeof (document.getElementsByClassName('slider-image-dot_')[myIndex - 1]) !== "undefined")
+        (document.getElementsByClassName('slider-image-dot_')[myIndex - 1]).classList.add('active-slide_')
     slideIndex = myIndex + 1
     t = setTimeout(carousel, 2000)
 }

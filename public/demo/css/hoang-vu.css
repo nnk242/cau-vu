@@ -39,7 +39,7 @@
 }
 
 p.small {
-    height: 60px;
+    height: 30px;
 }
 
 .price_, .product-sale_ {
@@ -415,6 +415,7 @@ p.small {
 .data-upload_ > img {
     object-fit: contain;
     padding: 5px;
+    height: 100%;
 }
 
 @media only screen and (max-width: 768px) {
