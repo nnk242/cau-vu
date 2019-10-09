@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Component\UploadFile;
 use App\Model\Category;
+use App\Model\CategoryProduct;
 use App\Model\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -95,9 +96,14 @@ class ProductController extends Controller
             'type' => $request->type == 'slide' ? 'slide' : 'normal'
         ];
 
-        $this->model()::create(
+        $category = $this->model()::create(
             $data
         );
+
+        CategoryProduct::create([
+            'category_id' => $category->id,
+            'product_id' => $category->id
+        ]);
 
         return redirect()->back()->with('success', 'Lưu thành công!');
     }
