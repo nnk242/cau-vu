@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Model\Category;
+use App\Model\CategoryProduct;
 use App\Model\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -37,5 +38,13 @@ class HomeController extends Controller
                 ->paginate(10);
         }
         return view('frontend.category', compact('products'));
+    }
+
+    public function detail($name_unicode)
+    {
+        $product = Product::wherename_unicode($name_unicode)->firstorfail();
+        $category_products = CategoryProduct::whereproduct_id($product->id)->pluck('category_id');
+        dd($category_products);
+        return view('frontend.detail', compact('product'));
     }
 }

@@ -26,35 +26,43 @@
                     </li>
                 </ul>
             </div>
-            <div class="right-menu-header-top_">
-                <div class="slider-holder_">
-                    <div class="image-holder_">
-                        @foreach($slides as $slide)
-                            <img
-                                src="{{$slide->images ? (\App\Component\FirstImage::img($slide->images) ? \App\Component\FirstImage::img($slide->images) : 'https://66.media.tumblr.com/a8e3c2a519fa0bfad2f9c562dd33ccc0/tumblr_pvjg6bpkKe1rogvb0o1_1280.jpg') : 'https://66.media.tumblr.com/a8e3c2a519fa0bfad2f9c562dd33ccc0/tumblr_pvjg6bpkKe1rogvb0o1_1280.jpg'}}"
-                                class="slider-image_"/>
-                        @endforeach
-                        <img
-                            src="https://66.media.tumblr.com/9cea6215dc83cd113d1d0d485636eb19/tumblr_psieapK3X01rogvb0o1_1280.jpg"
-                            class="slider-image_"/>
-                        <img
-                            src="https://66.media.tumblr.com/02bf725cc58f7012fed1a78e33e9e9f3/tumblr_psiealE4b31rogvb0o1_1280.jpg"
-                            class="slider-image_"/>
-                    </div>
-                    <div class="slider-button-holder_">
-                        <div class="slider-image-dot_ active-slide_" ref="1"
-                             onclick="currentDiv(1, this)"></div>
-                        <div class="slider-image-dot_" ref="2" onclick="currentDiv(2, this)"></div>
-                        <div class="slider-image-dot_" ref="3" onclick="currentDiv(3, this)"></div>
-                    </div>
-                    <div class="control-scroll-product_" id="header-control-scroll-product_">
-                        <div class="prev-scroll-product_" onclick="plusDivs(-1)"><img
-                                src="{{asset('demo/img/icons/prev.svg')}}"></div>
-                        <div class="next-scroll-product_" onclick="plusDivs(1)"><img
-                                src="{{asset('demo/img/icons/next.svg')}}"></div>
+            @isset($slides)
+                <div class="right-menu-header-top_">
+                    <div class="slider-holder_">
+                        <div class="image-holder_">
+                            @foreach($slides as $slide)
+                                <img
+                                    src="{{$slide->images ? (\App\Component\FirstImage::img($slide->images) ? \App\Component\FirstImage::img($slide->images) : 'https://66.media.tumblr.com/a8e3c2a519fa0bfad2f9c562dd33ccc0/tumblr_pvjg6bpkKe1rogvb0o1_1280.jpg') : 'https://66.media.tumblr.com/a8e3c2a519fa0bfad2f9c562dd33ccc0/tumblr_pvjg6bpkKe1rogvb0o1_1280.jpg'}}"
+                                    class="slider-image_"/>
+                            @endforeach
+                            {{--                        <img--}}
+                            {{--                            src="https://66.media.tumblr.com/9cea6215dc83cd113d1d0d485636eb19/tumblr_psieapK3X01rogvb0o1_1280.jpg"--}}
+                            {{--                            class="slider-image_"/>--}}
+                            {{--                        <img--}}
+                            {{--                            src="https://66.media.tumblr.com/02bf725cc58f7012fed1a78e33e9e9f3/tumblr_psiealE4b31rogvb0o1_1280.jpg"--}}
+                            {{--                            class="slider-image_"/>--}}
+                        </div>
+                        @if($slides->count() > 1)
+                            <div class="slider-button-holder_">
+                                @foreach($slides as $key=>$slide)
+                                    <div class="slider-image-dot_ active-slide_" ref="{{ $key+1 }}"
+                                         onclick="currentDiv(parseInt('{{$key+1}}'), this)"></div>
+                                @endforeach
+                                {{--                        <div class="slider-image-dot_" ref="2" onclick="currentDiv(2, this)"></div>--}}
+                                {{--                        <div class="slider-image-dot_" ref="3" onclick="currentDiv(3, this)"></div>--}}
+                            </div>
+                        @endif
+                        @if($slides->count() > 1)
+                            <div class="control-scroll-product_" id="header-control-scroll-product_">
+                                <div class="prev-scroll-product_" onclick="plusDivs(-1)"><img
+                                        src="{{asset('demo/img/icons/prev.svg')}}"></div>
+                                <div class="next-scroll-product_" onclick="plusDivs(1)"><img
+                                        src="{{asset('demo/img/icons/next.svg')}}"></div>
+                            </div>
+                        @endif
                     </div>
                 </div>
-            </div>
+            @endisset
         </div>
     </div>
     <div class="contain">
@@ -85,7 +93,7 @@
                                     </div>
                                     <h5 class="name-product_">{{ $new->name }}</h5>
                                     <p class="price_">Giá: <b>{{ number_format($new->price, 0) }} ₫</b></p>
-                                    <a href="{{route('detail')}}" class="learn_more">Xem chi tiết sản phẩm
+                                    <a href="{{ route('san-pham', ['name_unicode' => $new->name_unicode]) }}" class="learn_more">Xem chi tiết sản phẩm
                                         <span>→</span></a>
                                 </div>
                             </div>
@@ -124,7 +132,7 @@
                             @else
                                 <p class="price_">Giá: <b>{{ number_format($product->price, 0) }} ₫</b></p>
                             @endif
-                            <a href="{{route('detail')}}" class="learn_more">Xem chi tiết sản phẩm
+                            <a href="{{ route('san-pham', ['name_unicode' => $product->name_unicode]) }}" class="learn_more">Xem chi tiết sản phẩm
                                 <span>→</span></a>
                         </div>
                     </li>

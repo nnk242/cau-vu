@@ -21,6 +21,10 @@ Route::get('demo-web/detail', function () {
 
 Route::get('{name_unicode}/danh-muc', 'Frontend\HomeController@category')->name('danh-muc');
 
+Route::get('{name_unicode}', 'Frontend\HomeController@detail')->name('san-pham');
+
+//Route::get('{id}/san-pham', 'Frontend\HomeController@detailID')->name('san-pham-id');
+
 Route::get('/', 'Frontend\HomeController@index');
 
 Route::group(['prefix' => 'admin'], function () {

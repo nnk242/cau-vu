@@ -7,7 +7,7 @@
                 <div class="page_contain">
                     <div class="contain content-breadcrumb_">
                         <a href="{{route('demo-web')}}">Trang chủ</a><img class="img-breadcrumb_"
-                                                      src="{{asset('demo/img/icons/chevron-right.svg')}}">
+                                                                          src="{{asset('demo/img/icons/chevron-right.svg')}}">
                         <a href="{{route('demo-web')}}">Kệ tường</a>
                         <img class="img-breadcrumb_"
                              src="{{asset('demo/img/icons/chevron-right.svg')}}"><span>Tên sản phẩm</span>
@@ -16,31 +16,37 @@
                         <div class="detail-item_">
                             <div class="detail-item-all-images_">
                                 <div class="detail-item-left-image_">
-                                    <img class="item-image_ active-item-image_" role="active"
-                                         src="https://66.media.tumblr.com/a2b105d5eaaa7f739709cb53ec61f2d8/tumblr_poyjg1Fdva1rogvb0o1_1280.jpg">
-                                    <img class="item-image_" role="non-active"
-                                         src="https://66.media.tumblr.com/2b45b80a5b746f71d6837972ef6047c8/tumblr_ps78efsqTt1rogvb0o1_640.jpg">
+                                    @foreach(\App\Component\ArrImg::img($product->images) as $key=>$image)
+                                        <img class="item-image_ {{ $key==0 ? 'active-item-image_' : '' }}"
+                                             role="{{ $key==0 ? 'active' : 'non-active' }}"
+                                             src="{{ asset('img/upload/' . $image) }}">
+                                    @endforeach
                                 </div>
                                 <div class="detail-item-right-image_ zoom" id="ex2">
                                     <img
-                                        src="https://66.media.tumblr.com/a2b105d5eaaa7f739709cb53ec61f2d8/tumblr_poyjg1Fdva1rogvb0o1_1280.jpg">
+                                        src="{{ asset(\App\Component\FirstImage::img($product->images)) }}">
                                 </div>
                             </div>
                             <div class="detail-price_">
-                                <span class="title-name-product_">Tên sản phẩm</span>
+                                <span class="title-name-product_">{{ $product->name }}</span>
                                 <p style="margin-bottom: 0">Người chế tác: Hoàng vũ</p>
-                                <p style="margin: 0">Mã sản phẩm: HV1</p>
-                                <p class="price_">Giá: <b>150.000 ₫</b> <span
-                                        class="product-sale_">10.690.000 ₫</span>
-                                </p>
+                                <p style="margin: 0">Mã sản phẩm: {{ $product->id }}</p>
+                                @if(time() <= (int)$product->time_end and time() >= $product->time_begin)
+                                    <p class="price_">Giá: <b>{{ number_format($product->promotion_price, 0) }} ₫</b>
+                                        <span
+                                            class="product-sale_">{{ number_format($product->price, 0) }} ₫</span></p>
+                                @else
+                                    <p class="price_">Giá: <b>{{ number_format($product->price, 0) }} ₫</b></p>
+                                @endif
                                 <div>
                                     <div class="content">
                                         <p style="margin-bottom: 0">Hãy trở thành khách hàng của chúng tôi!!!</p>
                                         <p>SĐT: <b>0382 997 997</b></p>
                                     </div>
-                                    <a href="{{route('demo-web')}}" class="btn"><span><img src="{{asset('demo/img/icons/shopping-cart.svg')}}"
-                                                                       width="20"
-                                                                       style="margin-right: 5px"> Đặt mua</span></a>
+                                    <a href="{{route('demo-web')}}" class="btn"><span><img
+                                                src="{{asset('demo/img/icons/shopping-cart.svg')}}"
+                                                width="20"
+                                                style="margin-right: 5px"> Đặt mua</span></a>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +78,7 @@
                     </div>
                     <div class="contain">
                         <span class="title-name-product_">Mô tả sản phẩm</span>
-                        <p>Sản phẩm là quà lưu niệm được thiết kế dành riêng cho bạn</p>
+                        {!! $product->description !!}
                     </div>
                 </div>
             </div>

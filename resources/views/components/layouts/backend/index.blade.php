@@ -57,27 +57,6 @@
 
             <section class="body_content">
                 <header class="docs_actions">
-{{--                    <div class="version_drop">--}}
-{{--                        <div class="input_group">--}}
-{{--                            <label>Version</label>--}}
-{{--                            <div class="custom_select">--}}
-{{--                                <select id="version_switcher">--}}
-{{--                                    <option value="https://laravel.com/docs/master">Master</option>--}}
-{{--                                    <option selected value="https://laravel.com/docs/6.0">6.0</option>--}}
-{{--                                    <option value="https://laravel.com/docs/5.8">5.8</option>--}}
-{{--                                    <option value="https://laravel.com/docs/5.7">5.7</option>--}}
-{{--                                    <option value="https://laravel.com/docs/5.6">5.6</option>--}}
-{{--                                    <option value="https://laravel.com/docs/5.5">5.5</option>--}}
-{{--                                    <option value="https://laravel.com/docs/5.4">5.4</option>--}}
-{{--                                    <option value="https://laravel.com/docs/5.3">5.3</option>--}}
-{{--                                    <option value="https://laravel.com/docs/5.2">5.2</option>--}}
-{{--                                    <option value="https://laravel.com/docs/5.1">5.1</option>--}}
-{{--                                    <option value="https://laravel.com/docs/5.0">5.0</option>--}}
-{{--                                    <option value="https://laravel.com/docs/4.2">4.2</option>--}}
-{{--                                </select>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
                     <div class="search_contain">
                         <div class="input_group search icon">
                             <input type="text" class="search_input" id="search-docs-input" placeholder="Tìm kiếm">
