@@ -24,7 +24,7 @@
                 <div class="form-group">
                     @foreach($categories as $category)
                         <label class="checkbox-inline"><input type="checkbox" value="{{ $category->id }}"
-                                                              name="categoies">{{ $category->name }}</label>
+                                                              name="categories[]">{{ $category->name }}</label>
                     @endforeach
                 </div>
                 <div class="form-group">

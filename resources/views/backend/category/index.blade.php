@@ -26,7 +26,7 @@
                         <img class="image-table_" src="{{ asset('img/upload/' . $value->image) }}">
                     @endisset
                 </td>
-                <td>{{ $value->description }}</td>
+                <td>{!!  $value->description !!}</td>
                 <td>{{ $value->user->name }}</td>
                 <td>{{ $value->created_at }}</td>
                 <td><a href="{{ route('category.edit', ['id' => $value->id]) }}" class="action_ action-edit_"><img

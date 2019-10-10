@@ -6,6 +6,7 @@
         <tr>
             <th>###</th>
             <th>Tên sản phẩm</th>
+            <th>Danh mục</th>
             <th>Hình ảnh</th>
             <th>Thới thiệu</th>
             <th>Người tạo</th>
@@ -19,11 +20,18 @@
                 <td>{{ $key + 1 }}</td>
                 <td><code class=" language-php">{{ $value->name }}</code></td>
                 <td>
+                    @if($value->categoryProducts)
+                        @foreach($value->categoryProducts as $item)
+                            {{ $item->product->name }}
+                        @endforeach
+                    @endif
+                </td>
+                <td>
                     @isset($value->image)
                         <img class="image-table_" src="{{ asset('img/upload/' . $value->image) }}">
                     @endisset
                 </td>
-                <td>{{ $value->description }}</td>
+                <td>{!!  $value->description !!}</td>
                 <td>{{ $value->user->name }}</td>
                 <td>{{ $value->created_at }}</td>
                 <td><a href="{{ route('category.edit', ['id' => $value->id]) }}" class="action_ action-edit_"><img

@@ -96,14 +96,21 @@ class ProductController extends Controller
             'type' => $request->type == 'slide' ? 'slide' : 'normal'
         ];
 
-        $category = $this->model()::create(
+        $product = $this->model()::create(
             $data
         );
 
-        CategoryProduct::create([
-            'category_id' => $category->id,
-            'product_id' => $category->id
-        ]);
+        if (gettype($request->categories) === 'array') {
+            foreach ($request->categories as $category_id) {
+                $category = Category::find($category_id);
+                if (isset($c)) {
+                    CategoryProduct::create([
+                        'product_id' => $product->id,
+                        'category_id' => $category_id
+                    ]);
+                }
+            }
+        }
 
         return redirect()->back()->with('success', 'Lưu thành công!');
     }
