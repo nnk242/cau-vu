@@ -18,6 +18,19 @@
                                 href="{{ route('category.create') }}">Thêm danh mục</a></li>
                     </ul>
                 </li>
+                <li ref="seller"
+                    class="{{ \App\Component\RefSideBar::ref('seller')['parent'] }}">
+                    <h2>Người bán</h2>
+                    <ul>
+                        <li ref="category.index"
+                            class="{{ \App\Component\RefSideBar::ref('seller')['parent'] === 'sub--on' ? \App\Component\RefSideBar::ref('seller')['child'] : '' }}">
+                            <a href="{{ route('seller.index') }}">Tất cả người bán</a></li>
+                        <li ref="category.create"
+                            class="{{ \App\Component\RefSideBar::ref('seller')['parent'] === 'sub--on' ? \App\Component\RefSideBar::ref('seller', 'create')['child'] : '' }}">
+                            <a
+                                href="{{ route('seller.create') }}">Thêm người bán</a></li>
+                    </ul>
+                </li>
                 <li ref="product" class="{{ \App\Component\RefSideBar::ref('product')['parent'] }}">
                     <h2>Sản phẩm</h2>
                     <ul>

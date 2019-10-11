@@ -33,7 +33,7 @@
                             @else
                                 <p class="price_">Giá: <b>{{ number_format($product->price, 0) }} ₫</b></p>
                             @endif
-                            <a href="{{route('detail')}}" class="learn_more">Xem chi tiết sản phẩm
+                            <a href="{{ route('san-pham', ['name_unicode' => $product->name_unicode]) }}" class="learn_more">Xem chi tiết sản phẩm
                                 <span>→</span></a>
                         </div>
                     </li>

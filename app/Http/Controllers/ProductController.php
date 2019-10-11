@@ -103,7 +103,7 @@ class ProductController extends Controller
         if (gettype($request->categories) === 'array') {
             foreach ($request->categories as $category_id) {
                 $category = Category::find($category_id);
-                if (isset($c)) {
+                if (isset($category)) {
                     CategoryProduct::create([
                         'product_id' => $product->id,
                         'category_id' => $category_id

@@ -6,11 +6,17 @@
             <div class="content_contain" style="padding-bottom: 4.5em;">
                 <div class="page_contain">
                     <div class="contain content-breadcrumb_">
-                        <a href="{{route('demo-web')}}">Trang chủ</a><img class="img-breadcrumb_"
-                                                                          src="{{asset('demo/img/icons/chevron-right.svg')}}">
-                        <a href="{{route('demo-web')}}">Kệ tường</a>
+                        <a href="{{route('index')}}" title="Trang chủ">Trang chủ</a><img class="img-breadcrumb_"
+                                                                                         src="{{asset('demo/img/icons/chevron-right.svg')}}">
+                        @if($category_products->count())
+                            @foreach($category_products as $key => $category_product)
+                                <a href="{{route('danh-muc', ['name_unicode' => $category_product->category->name_unicode])}}"
+                                   title="{{ $category_product->category->name }}">{{ $category_product->category->name . (($key < $category_products->count() - 1) ? ',' : '') }}</a>
+                            @endforeach
+                        @endif
                         <img class="img-breadcrumb_"
-                             src="{{asset('demo/img/icons/chevron-right.svg')}}"><span>Tên sản phẩm</span>
+                             src="{{asset('demo/img/icons/chevron-right.svg')}}"><span
+                            title="{{ $product->name }}">{{ $product->name }}</span>
                     </div>
                     <div class="contain">
                         <div class="detail-item_">
@@ -29,8 +35,10 @@
                             </div>
                             <div class="detail-price_">
                                 <span class="title-name-product_">{{ $product->name }}</span>
-                                <p style="margin-bottom: 0">Người chế tác: Hoàng vũ</p>
-                                <p style="margin: 0">Mã sản phẩm: {{ $product->id }}</p>
+                                @isset($product->seller_products->name)
+                                    <p style="margin-bottom: 0">Người chế tác: {{ $product->seller_products->name }}</p>
+                                @endisset
+                                <p style="margin: 0">Mã sản phẩm: {{ $product->name_unicode }}</p>
                                 @if(time() <= (int)$product->time_end and time() >= $product->time_begin)
                                     <p class="price_">Giá: <b>{{ number_format($product->promotion_price, 0) }} ₫</b>
                                         <span
@@ -62,15 +70,23 @@
                                 <tbody>
                                 <tr>
                                     <td>Mã sản phẩm</td>
-                                    <td>HV1</td>
+                                    <td>{{ $product->name_unicode }}</td>
                                 </tr>
+                                @if($product->material)
+                                    <tr>
+                                        <td>Chất liệu</td>
+                                        <td>{{ $product->material }}</td>
+                                    </tr>
+                                @endif
+                                @if($product->size)
+                                    <tr>
+                                        <td>Kích cỡ</td>
+                                        <td>{{ $product->size }}</td>
+                                    </tr>
+                                @endif
                                 <tr>
-                                    <td>Chất liệu</td>
-                                    <td>Gỗ lim</td>
-                                </tr>
-                                <tr>
-                                    <td>Kích cỡ</td>
-                                    <td>20cmx30cm</td>
+                                    <td>Ngày đăng</td>
+                                    <td>{{ date('h:s-i d-m-yyyy', $product->created->timestamp()) }}</td>
                                 </tr>
                                 </tbody>
                             </table>

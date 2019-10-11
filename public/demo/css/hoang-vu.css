@@ -273,6 +273,23 @@ p.small {
 .detail-item-left-image_ {
     width: 30%;
     padding: 0 1rem;
+    overflow-y: auto;
+}
+
+.detail-item-left-image_::-webkit-scrollbar {
+    width: 10px;
+}
+
+.detail-item-left-image_::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.detail-item-left-image_::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.detail-item-left-image_::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 .detail-item-left-image_ > .active-item-image_ {

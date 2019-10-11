@@ -25,11 +25,12 @@ Route::get('{name_unicode}', 'Frontend\HomeController@detail')->name('san-pham')
 
 //Route::get('{id}/san-pham', 'Frontend\HomeController@detailID')->name('san-pham-id');
 
-Route::get('/', 'Frontend\HomeController@index');
+Route::get('/', 'Frontend\HomeController@index')->name('index');
 
 Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
     Route::resource('category', 'CategoryController');
+    Route::resource('seller', 'SellerController');
     Route::resource('product', 'ProductController');
 });
 

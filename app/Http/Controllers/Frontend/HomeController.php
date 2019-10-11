@@ -24,8 +24,8 @@ class HomeController extends Controller
         if ($name_unicode === 'khac.hv') {
             $products = Product::select('products.*')
                 ->where('products.status', 1)
-                ->leftJoin('category_product', function ($join) {
-                    $join->on('category_product.product_id', '=', 'products.id');
+                ->leftJoin('category_products', function ($join) {
+                    $join->on('category_products.product_id', '=', 'products.id');
                 })
                 ->paginate(10);
             return view('frontend.category', compact('products'));
@@ -43,8 +43,7 @@ class HomeController extends Controller
     public function detail($name_unicode)
     {
         $product = Product::wherename_unicode($name_unicode)->firstorfail();
-        $category_products = CategoryProduct::whereproduct_id($product->id)->pluck('category_id');
-        dd($category_products);
-        return view('frontend.detail', compact('product'));
+        $category_products = CategoryProduct::whereproduct_id($product->id)->get();
+        return view('frontend.detail', compact('product', 'category_products'));
     }
 }

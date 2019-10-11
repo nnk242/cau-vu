@@ -23,6 +23,8 @@ class CreateProductsTable extends Migration
             $table->integer('time_begin')->nullable();
             $table->integer('time_end')->nullable();
             $table->mediumText('description')->nullable();
+            $table->string('size', 1000)->nullable();
+            $table->string('material', 500)->nullable();
             $table->smallInteger('status')->default(0);
             $table->enum('type', ['normal', 'slide'])->default('normal');
             $table->bigInteger('user_id')->unsigned();

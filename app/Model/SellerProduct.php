@@ -4,15 +4,15 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CategoryProduct extends Model
+class SellerProduct extends Model
 {
     protected $table = 'category_products';
 
-    protected $fillable = ['category_id', 'product_id'];
+    protected $fillable = ['seller_id', 'product_id'];
 
-    public function category()
+    public function seller()
     {
-        return $this->belongsTo(Category::class, 'category_id', 'id');
+        return $this->belongsTo(Seller::class, 'category_id', 'id');
     }
 
     public function product()
